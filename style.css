@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-cyan: hsl(185, 75%, 39%);
+    --dark-desaurated-blue: hsl(229, 23%, 23%);
+    --dark-grayish-blue: hsl(227, 10%, 46%);
+    --dark-gray: hsl(0, 0%, 59%);
+
+    --mobile-breakpoint: 375px;
+    --font-family: 'Kumbh Sans', sans-serif;
+    --bold-font: 700;
+    --main-font-size: 18px;
+}
+
+html {
+    font-size: var(--main-font-size);
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: var(--dark-cyan);
+    font-family: var(--font-family);
+}
+
+body::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: -400px;
+    left: 0%;
+    width: 800px;
+    height: 800px;
+    background: url("/images/bg-pattern-top.svg") no-repeat top left;
+    background-size: 100% 100%;
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    bottom: -60%;
+    right: -5%;
+    width: 800px;
+    height: 800px;
+    background: url("/images/bg-pattern-bottom.svg") no-repeat top left;
+    background-size: 100% 100%;
+    z-index: -1;
+}
+
+main {
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 20px 20px 5px hsla(227, 10%, 46%, 0.25);
+}
+
+main .banner-image {
+    background-image: url("/images/bg-pattern-card.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top left;
+    margin-bottom: 3.75rem;
+    border-radius: inherit;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+main figure {
+    margin: 0;
+    height: 130px;
+}
+
+main figure img {
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+    border: 5px solid white;
+    position: relative;
+    left: 50%;
+    top: 75px;
+    transform: translateX(-50%);
+    object-fit: cover;
+}
+
+main .info {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+main .info p {
+    margin-bottom: 0.5rem;
+}
+
+main .info p span {
+    display: inline-block;
+    margin-left: 0.25rem;
+}
+
+main .info p span, main .info span {
+    color: var(--dark-grayish-blue);
+}
+
+main .info > span {
+    font-size: 15px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1.25rem;
+    border-top: 2px solid hsla(0, 0%, 59%, 0.1);
+}
+
+.stats div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1.5rem;
+}
+
+.stats div:first-child {
+    padding-left: 1rem;
+}
+
+.stats div:last-child {
+    padding-right: 1rem;
+}
+
+.stats div span {
+    color: var(--dark-grayish-blue);
+    font-size: 11px;
+    letter-spacing: 0.1rem;
+    display: inline-block;
+    margin-top: 0.2rem;
+}
+
+main .info p strong, .stats div strong {
+    color: var(--dark-desaurated-blue);
+}
+
+@media (max-width: 375px) {
+    main {
+        width: 85%;
+    }
+
+    body::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: -150px;
+        left: -300px;
+        height: 500px;
+        width: 500px;
+        background: url("/images/bg-pattern-top.svg") no-repeat top left;
+        background-size: 100% 100%;
+        z-index: -1;
+    }
+
+    body::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        bottom: -25%;
+        right: -75%;
+        width: 500px;
+        height: 500px;
+        background: url("/images/bg-pattern-bottom.svg") no-repeat top left;
+        background-size: 100% 100%;
+        z-index: -1;
+    }
+}
